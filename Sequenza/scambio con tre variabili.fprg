@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="claud"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-11 02:03:08 "/>
+        <attribute name="created" value="Y2xhdWQ7REVTS1RPUC1FUzRGUEFBOzIwMjMtMTEtMjg7IjA4OjI3OjA0ICI7Mjc4Mw=="/>
+        <attribute name="edited" value="Y2xhdWQ7REVTS1RPUC1FUzRGUEFBOzIwMjQtMDMtMTE7IjAyOjAzOjA4ICI7MjsyODc4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Scambiare due variabili utilizzando una terza variabile d'appoggio."/>
+            <declare name="a, b, temp" type="Integer" array="False" size=""/>
+            <output expression="&quot;Inserisci il primo numero da scambiare&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Inserisci il secondo numero da scambiare&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;La variabile a = &quot;&amp; a &amp; &quot; mentre la variabile b = &quot;&amp; b" newline="True"/>
+            <assign variable="temp" expression="a"/>
+            <assign variable="a" expression="b"/>
+            <assign variable="b" expression="temp"/>
+            <output expression="&quot;La situazione dopo lo scambio &#232; la seguente:&quot;" newline="True"/>
+            <output expression="&quot;La variabile a = &quot;" newline="False"/>
+            <output expression="a" newline="False"/>
+            <output expression="&quot; mentre la variabile b = &quot;" newline="False"/>
+            <output expression="b" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
