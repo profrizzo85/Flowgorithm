@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="claud"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-17 04:06:42 "/>
+        <attribute name="created" value="Y2xhdWQ7REVTS1RPUC1FUzRGUEFBOzIwMjQtMDQtMTc7IjAzOjUwOjM1ICI7Mjc3OQ=="/>
+        <attribute name="edited" value="Y2xhdWQ7REVTS1RPUC1FUzRGUEFBOzIwMjQtMDQtMTc7IjA0OjA2OjQyICI7MzsyODg5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Un robot inseguitore di linea ha 2 sensori (uno a sinistra e uno a destra) che riescono a individuare il bianco e il nero. Scrivere un programma che faccia eseguire dei movimenti diversi in base alla lettura dei sensori. Le possibili situazioni sono le seguenti:&#13;&#10;se entrambi i sensori vedono bianco, verr&#224; stampato a schermo &#8220;Vai avanti&#8221;;&#13;&#10;se entrambi i sensori vedono nero, verr&#224; stampato &#8220;Vai avanti di uno step&#8221;;&#13;&#10;se il sensore di sinistra vede bianco e quello di destra nero, stampa &#8220;Gira a destra&#8221;;&#13;&#10;se il sensore di sinistra vede nero e quello di destra bianco, stampa &#8220;Gira a sinistra&#8221;;&#13;&#10;Il programma dovr&#224; acquisire in input la lettura dei due sensori: bianco o nero oppure 0 o 1 e stampare l&#8217;output corretto. Il programma deve eseguire un controllo sul valore in input accettando solo le stringhe: &quot;Bianco&quot; oppure &quot;Nero&quot;"/>
+            <declare name="sensoreSinistro, sensoreDestro" type="String" array="False" size=""/>
+            <do expression="sensoreSinistro != &quot;Bianco&quot; &amp;&amp; sensoreSinistro != &quot;Nero&quot;">
+                <output expression="&quot;Inserisci cosa vede il sensore di sinistra [Bianco/Nero]&quot;" newline="True"/>
+                <input variable="sensoreSinistro"/>
+            </do>
+            <do expression="sensoreDestro != &quot;Bianco&quot; &amp;&amp; sensoreDestro != &quot;Nero&quot;">
+                <output expression="&quot;Inserisci cosa vede il sensore di destra [Bianco/Nero]&quot;" newline="True"/>
+                <input variable="sensoreDestro"/>
+            </do>
+            <if expression="sensoreSinistro == &quot;Bianco&quot; &amp;&amp; sensoreDestro == &quot;Bianco&quot;">
+                <then>
+                    <output expression="&quot;Vai avanti&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="sensoreSinistro == &quot;Nero&quot; &amp;&amp; sensoreDestro == &quot;Nero&quot;">
+                        <then>
+                            <output expression="&quot;Vai avanti di uno step&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="sensoreSinistro == &quot;Bianco&quot; &amp;&amp; sensoreDestro == &quot;Nero&quot;">
+                                <then>
+                                    <output expression="&quot;Gira a destra&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="sensoreSinistro == &quot;Nero&quot; &amp;&amp; sensoreDestro == &quot;Bianco&quot;">
+                                        <then>
+                                            <output expression="&quot;Gira a sinistra&quot;" newline="True"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
